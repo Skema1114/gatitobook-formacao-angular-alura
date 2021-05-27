@@ -2,10 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   // AQUI EM BAIXO É UMA FUNÇÃO DE ROTA UTILIZANDO O LAZY LOAD
-  {path: 'home', loadChildren: () => import('./home/home.module').then((modulo) => modulo.HomeModule)},
-
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((modulo) => modulo.HomeModule),
+  },
+  {
+    path: 'animais',
+    loadChildren: () =>
+      import('./animais/animais.module').then((modulo) => modulo.AnimaisModule),
+  },
 ];
 
 @NgModule({
