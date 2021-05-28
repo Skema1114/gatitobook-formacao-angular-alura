@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public login(): void {
+  public logar(): void {
     this.authService.autenticar(this.usuario, this.senha).subscribe(
       () => {
         this.corBotao = 'blue';

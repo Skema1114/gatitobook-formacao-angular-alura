@@ -1,0 +1,90 @@
+<h4 class="text-center display-4">Cadastre-se</h4>
+<h4 class="text-center fonteSubtitulo">E mostre o seu pet para o mundo!</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+  <div class="form-floating mb-3">
+    <input
+      name="fullName"
+      type="text"
+      class="form-control"
+      aria-label="Nome completo"
+      placeholder="Nome completo"
+      formControlName="fullName"
+    />
+
+    <label for="Nome">Nome completo</label>
+
+    <!--     <app-mensagem
+      *ngIf="campoNome.invalid && campoNome.touched"
+      mensagem="Nome obrigatório"
+    ></app-mensagem> -->
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      name="userName"
+      type="text"
+      class="form-control"
+      aria-label="Usuário"
+      placeholder="Usuário"
+      formControlName="userName"
+    />
+
+    <label for="usuario">Usuário</label>
+
+    <!--     <app-mensagem
+      *ngIf="campoUsuario.invalid && campoUsuario.touched"
+      mensagem="Usuário obrigatório"
+    ></app-mensagem> -->
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      name="email"
+      type="email"
+      class="form-control"
+      aria-label="E-mail"
+      placeholder="E-mail"
+      formControlName="email"
+    />
+
+    <label for="senha">E-mail</label>
+
+    <!--     <app-mensagem
+      *ngIf="campoEmail.invalid && campoEmail.touched"
+      mensagem="Email obrigatório"
+    ></app-mensagem> -->
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      name="password"
+      type="password"
+      class="form-control"
+      aria-label="Senha"
+      placeholder="Senha"
+      formControlName="password"
+    />
+
+    <label for="senha">Senha</label>
+
+    <!--     <app-mensagem
+      *ngIf="campoSenha.invalid && campoSenha.touched"
+      mensagem="Senha obrigatória"
+    ></app-mensagem> -->
+  </div>
+
+  <div class="d-grid mt-1">
+    <button
+      type="submit"
+      class="btn btn-primary btn-lg btn-block"
+      [style.background-color]="corBotao"
+    >
+      Cadastrar-se
+    </button>
+  </div>
+</form>
+
+<p class="mt-3">
+  Já possui cadastro? <a [routerLink]="['']">entre agora mesmo</a>
+</p>
