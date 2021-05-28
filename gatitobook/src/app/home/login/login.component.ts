@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   public logar(): void {
     this.authService.autenticar(this.usuario, this.senha).subscribe(
-      () => {
+      (success) => {
         this.corBotao = 'blue';
         this.router.navigateByUrl('animais');
       },

@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AutenticacaoService {
-  private baseUrl: string = 'http://localhost:3000/user/login';
+  private baseUrl: string = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) {}
 
   autenticar(usuario: string, senha: string): Observable<any> {
-    return this.httpClient.post(this.baseUrl, {
+    return this.httpClient.post(`${this.baseUrl}/user/login`, {
       userName: usuario,
       password: senha,
     });

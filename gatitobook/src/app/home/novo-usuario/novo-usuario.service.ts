@@ -7,11 +7,18 @@ import { NovoUsuario } from './novo-usuario';
   providedIn: 'root',
 })
 export class NovoUsuarioService {
-  private baseUrl = 'http://localhost:3000/user/signup';
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   cadastraNovoUsuario(novoUsuario: NovoUsuario): Observable<NovoUsuario> {
-    return this.http.post<NovoUsuario>(this.baseUrl, novoUsuario);
+    return this.http.post<NovoUsuario>(
+      `${this.baseUrl}/user/signup`,
+      novoUsuario
+    );
+  }
+
+  verificaUsuarioExistente(nomeUsuario: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.baseUrl}/user/exists/${nomeUsuario}`);
   }
 }

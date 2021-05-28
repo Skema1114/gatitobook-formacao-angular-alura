@@ -2,6 +2,7 @@
 <h4 class="text-center fonteSubtitulo">E mostre o seu pet para o mundo!</h4>
 
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+  <!--NOME COMPLETO-->
   <div class="form-floating mb-3">
     <input
       name="fullName"
@@ -10,16 +11,39 @@
       aria-label="Nome completo"
       placeholder="Nome completo"
       formControlName="fullName"
+      [ngClass]="{
+        'is-valid': !novoUsuarioForm.get('fullName')?.errors,
+        'is-invalid':
+          (novoUsuarioForm.get('fullName')?.errors?.required &&
+            novoUsuarioForm.get('fullName')?.touched) ||
+          (novoUsuarioForm.get('fullName')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('fullName')?.touched)
+      }"
     />
 
-    <label for="Nome">Nome completo</label>
+    <label for="fullName">Nome completo</label>
 
-    <!--     <app-mensagem
-      *ngIf="campoNome.invalid && campoNome.touched"
-      mensagem="Nome obrigatório"
-    ></app-mensagem> -->
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors?.required &&
+          novoUsuarioForm.get('fullName')?.touched;
+        else tamanhoMinimoTemplateFullName
+      "
+      mensagem="Nome completo não informado"
+    ></app-mensagem>
+
+    <ng-template #tamanhoMinimoTemplateFullName>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('fullName')?.errors?.tamanhoMinimo &&
+          novoUsuarioForm.get('fullName')?.touched
+        "
+        mensagem="Nome completo muito curto"
+      ></app-mensagem>
+    </ng-template>
   </div>
 
+  <!--USUARIO-->
   <div class="form-floating mb-3">
     <input
       name="userName"
@@ -28,16 +52,65 @@
       aria-label="Usuário"
       placeholder="Usuário"
       formControlName="userName"
+      [ngClass]="{
+        'is-valid': !novoUsuarioForm.get('userName')?.errors,
+        'is-invalid':
+          (novoUsuarioForm.get('userName')?.errors?.required &&
+            novoUsuarioForm.get('userName')?.touched) ||
+          (novoUsuarioForm.get('userName')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('userName')?.touched) ||
+          (novoUsuarioForm.get('userName')?.errors?.minusculo &&
+            novoUsuarioForm.get('userName')?.touched) ||
+          (novoUsuarioForm.get('userName')?.errors?.usuarioExistente &&
+            novoUsuarioForm.get('userName')?.touched)
+      }"
     />
 
-    <label for="usuario">Usuário</label>
+    <label for="userName">Usuário</label>
 
-    <!--     <app-mensagem
-      *ngIf="campoUsuario.invalid && campoUsuario.touched"
-      mensagem="Usuário obrigatório"
-    ></app-mensagem> -->
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('userName')?.errors?.required &&
+          novoUsuarioForm.get('userName')?.touched;
+        else tamanhoMinimoTemplateUserName
+      "
+      mensagem="Usuário não informado"
+    ></app-mensagem>
+
+    <ng-template #tamanhoMinimoTemplateUserName>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('userName')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('userName')?.touched;
+          else minusculoTemplateUserName
+        "
+        mensagem="Usuário muito curto"
+      ></app-mensagem>
+    </ng-template>
+
+    <ng-template #minusculoTemplateUserName>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('userName')?.errors?.minusculo &&
+            novoUsuarioForm.get('userName')?.touched;
+          else usuarioExistenteTemplateUserName
+        "
+        mensagem="Usuário deve estar em letras minúsculas"
+      ></app-mensagem>
+    </ng-template>
+
+    <ng-template #usuarioExistenteTemplateUserName>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('userName')?.errors?.usuarioExistente &&
+          novoUsuarioForm.get('userName')?.touched
+        "
+        mensagem="Usuário já existe"
+      ></app-mensagem>
+    </ng-template>
   </div>
 
+  <!--EMAIL-->
   <div class="form-floating mb-3">
     <input
       name="email"
@@ -46,16 +119,36 @@
       aria-label="E-mail"
       placeholder="E-mail"
       formControlName="email"
+      [ngClass]="{
+        'is-valid': !novoUsuarioForm.get('email')?.errors,
+        'is-invalid':
+          (novoUsuarioForm.get('email')?.errors?.required &&
+            novoUsuarioForm.get('email')?.touched) ||
+          (novoUsuarioForm.get('email')?.errors?.email &&
+            novoUsuarioForm.get('email')?.touched)
+      }"
     />
 
-    <label for="senha">E-mail</label>
+    <label for="email">E-mail</label>
 
-    <!--     <app-mensagem
-      *ngIf="campoEmail.invalid && campoEmail.touched"
-      mensagem="Email obrigatório"
-    ></app-mensagem> -->
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.required &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-mail não informado"
+    ></app-mensagem>
+
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.email &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="Formato de e-mail incorreto"
+    ></app-mensagem>
   </div>
 
+  <!--SENHA-->
   <div class="form-floating mb-3">
     <input
       name="password"
@@ -64,21 +157,58 @@
       aria-label="Senha"
       placeholder="Senha"
       formControlName="password"
+      [ngClass]="{
+        'is-valid': !novoUsuarioForm.get('password')?.errors,
+        'is-invalid':
+          (novoUsuarioForm.get('password')?.errors?.required &&
+            novoUsuarioForm.get('password')?.touched) ||
+          (novoUsuarioForm.get('password')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('password')?.touched)
+      }"
     />
 
-    <label for="senha">Senha</label>
+    <label for="password">Senha</label>
 
-    <!--     <app-mensagem
-      *ngIf="campoSenha.invalid && campoSenha.touched"
-      mensagem="Senha obrigatória"
-    ></app-mensagem> -->
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('password')?.errors?.required &&
+          novoUsuarioForm.get('password')?.touched;
+        else tamanhoMinimoTemplateSenha
+      "
+      mensagem="Senha não informada"
+    ></app-mensagem>
+
+    <ng-template #tamanhoMinimoTemplateSenha>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('password')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('password')?.touched;
+          else usuarioSenhaIguaisTemplateSenha
+        "
+        mensagem="Senha muito curta"
+      ></app-mensagem>
+    </ng-template>
+
+    <ng-template #usuarioSenhaIguaisTemplateSenha>
+      <app-mensagem
+        *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
+        mensagem="Senha precisa ser diferente do campo Usuário"
+      ></app-mensagem>
+    </ng-template>
   </div>
 
+  <!--BOTÃO CADASTRAR-SE-->
   <div class="d-grid mt-1">
     <button
       type="submit"
       class="btn btn-primary btn-lg btn-block"
       [style.background-color]="corBotao"
+      [disabled]="
+        novoUsuarioForm.get('fullName')?.errors ||
+        novoUsuarioForm.get('userName')?.errors ||
+        novoUsuarioForm.get('email')?.errors ||
+        novoUsuarioForm.get('password')?.errors
+      "
     >
       Cadastrar-se
     </button>
