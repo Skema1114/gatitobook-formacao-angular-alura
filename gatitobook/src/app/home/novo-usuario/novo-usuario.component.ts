@@ -65,7 +65,7 @@ export class NovoUsuarioComponent implements OnInit {
     if (this.novoUsuarioForm.valid) {
       // ESSA LINHA SÓ ESTA FUNCIONANDO PORQUE A INTERFACE TEM OS MESMOS CAMPOS DO NOVO USUARIO, OS MESMOS CAMPOS DA API
       const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
-      this.novoUsuarioService.cadastraNovoUsuario(novoUsuario).subscribe(
+      this.novoUsuarioService.cadastrarNovoUsuario(novoUsuario).subscribe(
         (success) => {
           this.router.navigateByUrl('');
         },

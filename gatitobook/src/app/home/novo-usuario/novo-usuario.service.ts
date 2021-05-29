@@ -11,14 +11,16 @@ export class NovoUsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  cadastraNovoUsuario(novoUsuario: NovoUsuario): Observable<NovoUsuario> {
+  public cadastrarNovoUsuario(
+    novoUsuario: NovoUsuario
+  ): Observable<NovoUsuario> {
     return this.http.post<NovoUsuario>(
       `${this.baseUrl}/user/signup`,
       novoUsuario
     );
   }
 
-  verificaUsuarioExistente(nomeUsuario: string): Observable<boolean> {
+  public verificarUsuarioExistente(nomeUsuario: string): Observable<boolean> {
     return this.http.get<boolean>(`${this.baseUrl}/user/exists/${nomeUsuario}`);
   }
 }
