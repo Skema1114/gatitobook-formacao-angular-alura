@@ -8,7 +8,6 @@ import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
   styleUrls: ['./cabecalho.component.css'],
 })
 export class CabecalhoComponent implements OnInit {
-  // CIFRÃO NO FINAL É UMA CONVENÇÃO QUE INDICA QUE ESSA É UMA VARIAVEL É UM OBSERVABLE
   user$ = this.usuarioService.retornarUsuario();
 
   constructor(private usuarioService: UsuarioService, private router: Router) {}
