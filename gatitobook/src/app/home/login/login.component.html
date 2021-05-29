@@ -24,7 +24,7 @@
 
     <app-mensagem
       *ngIf="campoUsuario.invalid && campoUsuario.touched"
-      mensagem="Usuário obrigatório"
+      mensagem="Usuário não informado"
     ></app-mensagem>
   </div>
 
@@ -48,7 +48,7 @@
 
     <app-mensagem
       *ngIf="campoSenha.invalid && campoSenha.touched"
-      mensagem="Senha obrigatória"
+      mensagem="Senha não informada"
     ></app-mensagem>
   </div>
 
