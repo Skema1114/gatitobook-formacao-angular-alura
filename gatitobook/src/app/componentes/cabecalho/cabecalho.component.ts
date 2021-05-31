@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
+import { UsuarioService } from 'src/app/autenticacao/usuario/services/usuario.service';
 
 @Component({
   selector: 'app-cabecalho',

@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { TokenService } from '../autenticacao/token.service';
-import { Animais } from './animais';
+import { TokenService } from '../../autenticacao/services/token.service';
+import { Animais } from '../models/animais';
 
 const API = environment.apiUrl;
 

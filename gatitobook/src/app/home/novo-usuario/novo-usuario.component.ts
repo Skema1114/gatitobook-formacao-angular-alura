@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { minusculoValidator } from './validator/minusculo.validator';
-import { NovoUsuario } from './novo-usuario';
-import { NovoUsuarioService } from './novo-usuario.service';
-import { tamanhoMinimoValidator } from './validator/tamanho-minimo.validator';
-import { UsuarioExisteService } from './usuario-existe.service';
-import { usuarioSenhaIguaisValidator } from './validator/usuario-senha-iguais.validator';
+import { minusculoValidator } from './validators/minusculo.validator';
+import { NovoUsuario } from './models/novo-usuario';
+import { NovoUsuarioService } from './services/novo-usuario.service';
+import { tamanhoMinimoValidator } from './validators/tamanho-minimo.validator';
+import { UsuarioExisteService } from '../novo-usuario/services/usuario-existe.service';
+import { usuarioSenhaIguaisValidator } from './validators/usuario-senha-iguais.validator';
 
 @Component({
   selector: 'app-novo-usuario',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UsuarioService } from './usuario/usuario.service';
+import { UsuarioService } from '../usuario/services/usuario.service';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 
@@ -34,7 +34,6 @@ export class AutenticacaoService {
       .pipe(
         tap((response) => {
           const authToken = response.headers.get('x-access-token') ?? '';
-          console.log(authToken);
           this.usuarioService.salvarToken(authToken);
         })
       );
