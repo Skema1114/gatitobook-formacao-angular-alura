@@ -101,6 +101,10 @@ ng g i animais/animais
 
 ng g c animais/grade-fotos-animais
 
+ng g guard autenticacao/autenticacao (após, marcar o CanLoad)
+
+ng g guard autenticacao/login
+
 # Startar a API
 
 - npm install
