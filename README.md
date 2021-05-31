@@ -108,6 +108,6 @@ ng g c animais/grade-fotos-animais
 
 # Anotações
 
-- o atributo ARIA-HIDDEN é voltado para a acessibilidade pois é ele que define que os leitores de tela não lerão essa tag, foi utilizado em ícones pois os leitores não precisam ler os ícones;
+- O atributo ARIA-HIDDEN é voltado para a acessibilidade pois é ele que define que os leitores de tela não lerão essa tag, foi utilizado em ícones pois os leitores não precisam ler os ícones;
 - Cifrão no dinal de uma variável (ex: user$) é uma convenção que indica que essa variavel é do tipo OBSERVABLE;
 - No app-routing.module.ts foi criado o padrão LazyLoad que carrega e cachea as rotas quando as mesmas são chamadas, assim elas serão chamadas uma unica vez e depois de ser cacheada, não será necessário carrega-la novamente pois já estara salva no cache;
