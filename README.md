@@ -105,6 +105,10 @@ ng g guard autenticacao/autenticacao (após, marcar o CanLoad)
 
 ng g guard autenticacao/login
 
+ng g c animais/detalhe-animal
+
+ng g interceptor autenticacao/autenticacao
+
 # Startar a API
 
 - npm install
@@ -112,6 +116,8 @@ ng g guard autenticacao/login
 
 # Anotações
 
-- O atributo ARIA-HIDDEN é voltado para a acessibilidade pois é ele que define que os leitores de tela não lerão essa tag, foi utilizado em ícones pois os leitores não precisam ler os ícones;
-- Cifrão no dinal de uma variável (ex: user$) é uma convenção que indica que essa variavel é do tipo OBSERVABLE;
-- No app-routing.module.ts foi criado o padrão LazyLoad que carrega e cachea as rotas quando as mesmas são chamadas, assim elas serão chamadas uma unica vez e depois de ser cacheada, não será necessário carrega-la novamente pois já estara salva no cache;
+- O atributo `ARIA-HIDDEN` é voltado para a acessibilidade pois é ele que define que os leitores de tela não lerão essa tag, foi utilizado em ícones pois os leitores não precisam ler os ícones;
+- Cifrão no dinal de uma variável (ex: `user$`) é uma convenção que indica que essa variavel é do tipo `OBSERVABLE`;
+- No `app-routing.module.ts` foi criado o padrão `LazyLoad` que carrega e cachea as rotas quando as mesmas são chamadas, assim elas serão chamadas uma unica vez e depois de ser cacheada, não será necessário carrega-la novamente pois já estara salva no cache;
+- A propriedade `multi = true` nos providers (localizada no arquivo `autenticacao.module.ts`) informa que a aplicação podera ter multi interceptors, ou seja, mais de um interceptor, caso não passe a propriedade, o angular entende que tera apenas uma classe de interceptor e não registrará mais de um interceptor (padrão é `false`);
+- No arquivo `animais.service.ts`, nos métodos `animaisUsuario` e `buscaId` está sendo buscado o token e adicionado aos headers da requisição, só que isso está sendo feito pelo interceptor localizado no arquivo `autenticacao.interceptor.ts`, com isso, esse arquivo intercepta a requisição, busca o token e adiciona ao headers, esse é o papel de um interceptor, terá outros interceptors na aplicação fazendo esse papel;

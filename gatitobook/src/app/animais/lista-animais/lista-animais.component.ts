@@ -22,7 +22,7 @@ export class ListaAnimaisComponent implements OnInit {
     this.animais$ = this.usuarioService.retornarUsuario().pipe(
       switchMap((usuario) => {
         const userName = usuario.name ?? '';
-        return this.animaisService.listaDoUsuario(userName);
+        return this.animaisService.ListarAnimaisUsuario(userName);
       })
     );
   }
