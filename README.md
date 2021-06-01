@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # INSTALAÇÕES DURANTE O CURSO
 
-iniciar novo projeto com varias verificações já
+iniciar novo projeto com várias verificações já
 ng new gatitobook --strict
 
 npm install --save-dev prettier
@@ -41,7 +41,7 @@ npm install --save-dev tslint-plugin-prettier
 
 npm install bootstrap font-awesome
 
-ng generate module home --routing -d (--routing, já adiciona os arquivos de rotas; -d, teste executar o comando e da um retorno, mas nao cria os arquivos É SÓ PRA TESTAR)
+ng generate module home --routing -d (--routing, já adiciona os arquivos de rotas; -d, teste executar o comando e dá um retorno, mas não cria os arquivos É SÓ PRA TESTAR)
 
 ng generate module home --routing
 
@@ -87,7 +87,7 @@ ng g m componentes/rodape
 
 ng g c componentes/rodape
 
-FIM DO CURSO E INICIO DO PRÓXIMO QUE UTILIZA O MESMO PROJETO
+FIM DO CURSO E INÍCIO DO PRÓXIMO QUE UTILIZA O MESMO PROJETO
 
 ng g c animais/animal
 
@@ -109,6 +109,16 @@ ng g c animais/detalhe-animal
 
 ng g interceptor autenticacao/autenticacao
 
+ng g c animais/detalhe-animal/comentarios
+
+ng g s animais/detalhe-animal/comentarios/comentarios
+
+ng g i animais/detalhe-animal/comentarios/comentarios
+
+ng g resolver animais/lista-animais/lista-animais
+
+ng g m shared
+
 # Startar a API
 
 - npm install
@@ -117,7 +127,10 @@ ng g interceptor autenticacao/autenticacao
 # Anotações
 
 - O atributo `ARIA-HIDDEN` é voltado para a acessibilidade pois é ele que define que os leitores de tela não lerão essa tag, foi utilizado em ícones pois os leitores não precisam ler os ícones;
-- Cifrão no dinal de uma variável (ex: `user$`) é uma convenção que indica que essa variavel é do tipo `OBSERVABLE`;
-- No `app-routing.module.ts` foi criado o padrão `LazyLoad` que carrega e cachea as rotas quando as mesmas são chamadas, assim elas serão chamadas uma unica vez e depois de ser cacheada, não será necessário carrega-la novamente pois já estara salva no cache;
-- A propriedade `multi = true` nos providers (localizada no arquivo `autenticacao.module.ts`) informa que a aplicação podera ter multi interceptors, ou seja, mais de um interceptor, caso não passe a propriedade, o angular entende que tera apenas uma classe de interceptor e não registrará mais de um interceptor (padrão é `false`);
-- No arquivo `animais.service.ts`, nos métodos `animaisUsuario` e `buscaId` está sendo buscado o token e adicionado aos headers da requisição, só que isso está sendo feito pelo interceptor localizado no arquivo `autenticacao.interceptor.ts`, com isso, esse arquivo intercepta a requisição, busca o token e adiciona ao headers, esse é o papel de um interceptor, terá outros interceptors na aplicação fazendo esse papel;
+- O `$` no final de uma variável (ex: `user$`) é uma convenção que indica que essa variável é do tipo `OBSERVABLE`;
+- No `app-routing.module.ts` foi criado o padrão `LazyLoad` que carrega e cachea as rotas quando as mesmas são chamadas, assim elas serão chamadas uma única vez e depois de ser cacheada, não será necessário carregá-la novamente pois já estará salva no cache;
+- A propriedade `multi = true` nos providers (localizada no arquivo `autenticacao.module.ts`) informa que a aplicação poderá ter multi interceptors, ou seja, mais de um interceptor, caso não passe a propriedade, o angular entende que terá apenas uma classe de interceptor e não registrará mais de um interceptor (padrão é `false`);
+- No arquivo `animais.service.ts`, nos métodos `animaisUsuario` e `buscaId` está sendo buscado o token e adicionando aos headers da requisição, só que isso está sendo feito pelo interceptor localizado no arquivo `autenticacao.interceptor.ts`, com isso, esse arquivo intercepta a requisição, busca o token e adiciona ao headers, esse é o papel de um interceptor, terá outros interceptors na aplicação fazendo esse papel;
+- O `!!` antes de uma variável para transformar a informação em booleano;
+- O objetivo do `resolver` (exemplo o `lista-animais.resolver.ts`) é realizar alguma operação ou algum carregamento antes da rota ser resolvida, no caso da lista de animais, esta sendo carregada pelo `ngOnInit` que é a partir do componente já criado, com o `resolver` a busca na api vai ser feita enquanto a página é renderizada, quando a rota for chamada já começara a busca;
+- O módulo `shared` é uma conversão, onde este módulo visa organizar os utilitários comuns utilizados diversas vezes pelos demais módulos da aplicação, ou seja, a sua única função é agrupar os módulos em comum;

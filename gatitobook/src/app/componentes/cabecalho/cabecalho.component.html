@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm navbar-light">
   <div class="container-fluid" *ngIf="user$ | async as user">
-    <a class="navbar-brand mb-0 h">Gatito Book</a>
+    <a class="navbar-brand mb-0 h" [routerLink]="['']">Gatito Book</a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -12,6 +13,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div
       class="collapse navbar-collapse"
       id="navbarText"
@@ -22,6 +24,7 @@
           <a class="nav-link">{{ user.name }}</a>
         </li>
       </ul>
+
       <a class="nav-link sem-underline" (click)="logout()">Sair</a>
     </div>
   </div>

@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mapTo } from 'rxjs/operators';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { TokenService } from '../../autenticacao/services/token.service';
-import { Animais, Animal } from '../models/animais';
+import { Animais, Animal } from '../models/animal';
 
 const API = environment.apiUrl;
 const NOT_MODIFIED = '304';
