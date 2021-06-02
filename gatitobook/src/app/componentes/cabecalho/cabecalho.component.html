@@ -1,18 +1,23 @@
 <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm navbar-light">
   <div class="container-fluid" *ngIf="user$ | async as user">
-    <a class="navbar-brand mb-0 h" [routerLink]="['']">Gatito Book</a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
+    <a
+      class="navbar-brand mb-0 h cursor-selecao"
+      (click)="menu.abrirMenu()"
+      (keyup.space)="menu.abrirMenu()"
     >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <i class="fa fa-bars mr-2 cursor-selecao"></i>
+      Gatito Book
+    </a>
+
+    <app-menu #menu>
+      <ul class="list-unstyled d-flex justify-content-evenly">
+        <li>
+          <a class="sem-underline-menu" [routerLink]="['animais', 'novo']"
+            >Novo animal</a
+          >
+        </li>
+      </ul>
+    </app-menu>
 
     <div
       class="collapse navbar-collapse"
@@ -21,15 +26,17 @@
     >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link">{{ user.name }}</a>
+          <a class="nav-item sem-underline cursor-normal">{{ user.name }}</a>
         </li>
       </ul>
 
-      <a class="nav-link sem-underline" (click)="logout()">Sair</a>
+      <a class="nav-link sair cursor-selecao" (click)="logout()">Sair</a>
     </div>
   </div>
 </nav>
 
 <ng-template #login>
-  <a class="nav-link sem-underline" [routerLink]="['']">Entrar</a>
+  <a class="nav-link sem-underline cursor-selecao" [routerLink]="['']"
+    >Entrar</a
+  >
 </ng-template>

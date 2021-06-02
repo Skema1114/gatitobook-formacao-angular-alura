@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mapTo } from 'rxjs/operators';
@@ -39,5 +39,21 @@ export class AnimaisService {
           return error.status === NOT_MODIFIED ? of(false) : throwError(error);
         })
       );
+  }
+
+  uploadFotoAnimal(
+    descricao: string,
+    permitirComentarios: boolean,
+    arquivo: File
+  ) {
+    const formData = new FormData();
+    formData.append('description', descricao);
+    formData.append('allowComments', permitirComentarios ? 'true' : 'false');
+    formData.append('imageFile', arquivo);
+
+    return this.httpClient.post(`${API}/photos/upload`, formData, {
+      observe: 'events',
+      reportProgress: true,
+    });
   }
 }

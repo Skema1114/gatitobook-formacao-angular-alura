@@ -2,3 +2,20 @@
   color: darkgray !important;
   text-decoration: none !important;
 }
+
+.sem-underline-menu {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.sair {
+  color: darkgray !important;
+}
+
+.cursor-normal {
+  cursor: context-menu;
+}
+
+.cursor-selecao {
+  cursor: pointer;
+}

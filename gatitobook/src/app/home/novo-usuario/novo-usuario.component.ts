@@ -14,8 +14,8 @@ import { usuarioSenhaIguaisValidator } from './validators/usuario-senha-iguais.v
   styleUrls: ['./novo-usuario.component.css'],
 })
 export class NovoUsuarioComponent implements OnInit {
-  public novoUsuarioForm!: FormGroup;
-  public corBotao: string = 'blue';
+  novoUsuarioForm!: FormGroup;
+  corBotao: string = 'blue';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -61,7 +61,7 @@ export class NovoUsuarioComponent implements OnInit {
     );
   }
 
-  public cadastrar() {
+  cadastrar() {
     if (this.novoUsuarioForm.valid) {
       // ESSA LINHA SÓ ESTA FUNCIONANDO PORQUE A INTERFACE TEM OS MESMOS CAMPOS DO NOVO USUARIO, OS MESMOS CAMPOS DA API
       const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;

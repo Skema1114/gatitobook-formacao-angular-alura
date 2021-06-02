@@ -119,6 +119,20 @@ ng g resolver animais/lista-animais/lista-animais
 
 ng g m shared
 
+ng g m componentes/menu
+
+ng g c componentes/menu
+
+ng g c animais/novo-animal
+
+npm install -g http-server (aqui foi instalado um servidor web, que não é o mesmo do angular cli, podendo ser qualquer um)
+
+ng build (irá gerar o bundle, o pacote do projeto)
+
+ng build --prod (irá gerar dois pacotes, em modo de produção e mais otimizados, ele gerará um para navegadores mais antigos e outro para navegadores mais novos)
+
+http-server (baseado na instalação do `npm http-server`, basta dar esse comando na pasta do bundle `dist/gatitobook`)
+
 # Startar a API
 
 - npm install
@@ -134,3 +148,5 @@ ng g m shared
 - O `!!` antes de uma variável para transformar a informação em booleano;
 - O objetivo do `resolver` (exemplo o `lista-animais.resolver.ts`) é realizar alguma operação ou algum carregamento antes da rota ser resolvida, no caso da lista de animais, esta sendo carregada pelo `ngOnInit` que é a partir do componente já criado, com o `resolver` a busca na api vai ser feita enquanto a página é renderizada, quando a rota for chamada já começara a busca;
 - O módulo `shared` é uma conversão, onde este módulo visa organizar os utilitários comuns utilizados diversas vezes pelos demais módulos da aplicação, ou seja, a sua única função é agrupar os módulos em comum;
+- Cuidar com os arquivos de rotas, demorei um tempo pra descobrir um erro que não fazia sentido, ele estava tentando acessar `localhost/photos/novo` e na real a solução foi alterar de lugar as rotas do `animais-routing.module.ts`.
+- Após dar o comando para gerar o bundle `npm build --prod` será criada uma pasta chamada `dist`, dentro dessa pasta ficara a pasta de arquivos que poderão ser passados para o servidor web e executados.

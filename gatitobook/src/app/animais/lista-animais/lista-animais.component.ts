@@ -12,7 +12,7 @@ import { AnimaisService } from '../services/animais.service';
   styleUrls: ['./lista-animais.component.css'],
 })
 export class ListaAnimaisComponent implements OnInit {
-  public animais!: Animais;
+  animais!: Animais;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 

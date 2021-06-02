@@ -10,8 +10,8 @@ import { AnimaisService } from '../services/animais.service';
   styleUrls: ['./detalhe-animal.component.css'],
 })
 export class DetalheAnimalComponent implements OnInit {
-  public animalId!: number;
-  public animal$!: Observable<Animal>;
+  animalId!: number;
+  animal$!: Observable<Animal>;
 
   constructor(
     private animaisService: AnimaisService,
@@ -24,7 +24,7 @@ export class DetalheAnimalComponent implements OnInit {
     this.animal$ = this.animaisService.buscaAnimalId(this.animalId);
   }
 
-  public curtirAnimal() {
+  curtirAnimal() {
     this.animaisService.curtirAnimal(this.animalId).subscribe((curtida) => {
       if (curtida) {
         this.animal$ = this.animaisService.buscaAnimalId(this.animalId);
@@ -32,7 +32,7 @@ export class DetalheAnimalComponent implements OnInit {
     });
   }
 
-  public excluirAnimal() {
+  excluirAnimal() {
     this.animaisService.excluirAnimal(this.animalId).subscribe(
       (success) => {
         this.router.navigateByUrl('animais');

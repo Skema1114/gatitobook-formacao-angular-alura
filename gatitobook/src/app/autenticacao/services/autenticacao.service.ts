@@ -16,10 +16,7 @@ export class AutenticacaoService {
     private usuarioService: UsuarioService
   ) {}
 
-  public autenticar(
-    usuario: string,
-    senha: string
-  ): Observable<HttpResponse<any>> {
+  autenticar(usuario: string, senha: string): Observable<HttpResponse<any>> {
     return this.httpClient
       .post(
         `${API}/user/login`,

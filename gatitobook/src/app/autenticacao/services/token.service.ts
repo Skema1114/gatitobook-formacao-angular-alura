@@ -8,19 +8,19 @@ const KEY = 'token';
 export class TokenService {
   constructor() {}
 
-  public retornarToken(): string {
+  retornarToken(): string {
     return localStorage.getItem(KEY) ?? '';
   }
 
-  public salvarToken(token: string): void {
+  salvarToken(token: string): void {
     localStorage.setItem(KEY, token);
   }
 
-  public excluirToken(): void {
+  excluirToken(): void {
     localStorage.removeItem(KEY);
   }
 
-  public possuiToken(): boolean {
+  possuiToken(): boolean {
     return !!this.retornarToken();
   }
 }

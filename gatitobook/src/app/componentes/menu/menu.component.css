@@ -1,0 +1,37 @@
+.menu-bar {
+  visibility: hidden;
+  position: fixed;
+  height: 100%;
+  width: 20%;
+  max-width: 320px;
+  margin: 0;
+  padding: 1em;
+  background: white;
+  top: 0;
+  left: -90;
+  transition: lef 0.3s ease-out;
+  z-index: 1;
+}
+
+.active-menu .menu-bar {
+  visibility: visible;
+  left: 0;
+}
+
+.active-menu .overlay {
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cursor-normal {
+  cursor: context-menu;
+}
+
+.cursor-selecao {
+  cursor: pointer;
+}

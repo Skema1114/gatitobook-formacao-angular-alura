@@ -164,6 +164,8 @@
           (novoUsuarioForm.get('password')?.errors?.required &&
             novoUsuarioForm.get('password')?.touched) ||
           (novoUsuarioForm.get('password')?.errors?.tamanhoMinimo &&
+            novoUsuarioForm.get('password')?.touched) ||
+          (novoUsuarioForm.errors?.senhaIgualUsuario &&
             novoUsuarioForm.get('password')?.touched)
       }"
     />
@@ -204,12 +206,7 @@
       type="submit"
       class="btn btn-primary btn-lg btn-block"
       [style.background-color]="corBotao"
-      [disabled]="
-        novoUsuarioForm.get('fullName')?.errors ||
-        novoUsuarioForm.get('userName')?.errors ||
-        novoUsuarioForm.get('email')?.errors ||
-        novoUsuarioForm.get('password')?.errors
-      "
+      [disabled]="novoUsuarioForm.invalid"
     >
       Cadastrar-se
     </button>

@@ -12,8 +12,8 @@ import { ComentariosService } from './services/comentarios.service';
 })
 export class ComentariosComponent implements OnInit {
   @Input() id!: number;
-  public comentarios$!: Observable<Comentarios>;
-  public comentarioForm!: FormGroup;
+  comentarios$!: Observable<Comentarios>;
+  comentarioForm!: FormGroup;
 
   constructor(
     private comentariosService: ComentariosService,
@@ -27,7 +27,7 @@ export class ComentariosComponent implements OnInit {
     });
   }
 
-  public gravarComentario(): void {
+  gravarComentario(): void {
     const comentario = this.comentarioForm.get('comentario')?.value ?? '';
     this.comentarios$ = this.comentariosService
       .incluirComentario(this.id, comentario)

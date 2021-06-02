@@ -8,9 +8,9 @@ import { AutenticacaoService } from '../../autenticacao/services/autenticacao.se
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public usuario: string = '';
-  public senha: string = '';
-  public corBotao: string = 'blue';
+  usuario: string = '';
+  senha: string = '';
+  corBotao: string = 'blue';
 
   constructor(
     private authService: AutenticacaoService,
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public logar(): void {
+  logar(): void {
     this.authService.autenticar(this.usuario, this.senha).subscribe(
       (success) => {
         this.corBotao = 'blue';

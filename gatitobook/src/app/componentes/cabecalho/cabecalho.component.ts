@@ -14,7 +14,7 @@ export class CabecalhoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public logout() {
+  logout() {
     this.usuarioService.logout();
     this.router.navigateByUrl('');
   }

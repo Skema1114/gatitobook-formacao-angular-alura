@@ -12,13 +12,11 @@ const API = environment.apiUrl;
 export class NovoUsuarioService {
   constructor(private http: HttpClient) {}
 
-  public cadastrarNovoUsuario(
-    novoUsuario: NovoUsuario
-  ): Observable<NovoUsuario> {
+  cadastrarNovoUsuario(novoUsuario: NovoUsuario): Observable<NovoUsuario> {
     return this.http.post<NovoUsuario>(`${API}/user/signup`, novoUsuario);
   }
 
-  public verificarUsuarioExistente(nomeUsuario: string): Observable<boolean> {
+  verificarUsuarioExistente(nomeUsuario: string): Observable<boolean> {
     return this.http.get<boolean>(`${API}/user/exists/${nomeUsuario}`);
   }
 }

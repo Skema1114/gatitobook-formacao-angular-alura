@@ -22,21 +22,21 @@ export class UsuarioService {
     this.usuarioSubject.next(usuario);
   }
 
-  public retornarUsuario(): Observable<Usuario> {
+  retornarUsuario(): Observable<Usuario> {
     return this.usuarioSubject.asObservable();
   }
 
-  public salvarToken(token: string): void {
+  salvarToken(token: string): void {
     this.tokenService.salvarToken(token);
     this.decodificarJwt();
   }
 
-  public logout(): void {
+  logout(): void {
     this.tokenService.excluirToken();
     this.usuarioSubject.next({});
   }
 
-  public estaLogado(): boolean {
+  estaLogado(): boolean {
     return this.tokenService.possuiToken();
   }
 }
