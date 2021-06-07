@@ -1,3 +1,12 @@
+# Neste projeto:
+- Primeiro Curso:
+  - Angular: Boas práticas em arquiteturas e formulários 
+  - https://cursos.alura.com.br/course/angular-boas-praticas-arquiteturas-formularios
+
+- Segundo Curso:
+  - Angular: Controle o fluxo de navegação
+  - https://cursos.alura.com.br/course/angular-controle-fluxo-navegacao
+
 # Gatitobook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
