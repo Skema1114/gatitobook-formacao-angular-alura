@@ -11,56 +11,56 @@
 
 ## Comandos utilizados
 
-- ng new gatitobook --strict (iniciar novo projeto com várias verificações já)
-- npm install --save-dev prettier
-- npm install --save-dev tslint-config-prettier
-- npm install --save-dev tslint-plugin-prettier
-- npm install bootstrap font-awesome
-- ng generate module home --routing -d (--routing, já adiciona os arquivos de rotas; -d, teste executar o comando e dá um retorno, mas não cria os arquivos É SÓ PRA TESTAR)
-- ng generate module home --routing
-- ng g c home (g, generate; c, component)
-- ng serve --o (--o, abrir o navegador após a compilação)
-- ng g c home/login (criar o component login dentro do modulo home)
-- ng g m autenticacao
-- ng g s autenticacao/autenticacao (s, service)
-- ng g m animais --routing
-- ng g c animais/lista-animais
-- ng g m componentes/mensagem
-- ng g c componentes/mensagem
-- ng g c home/novo-usuario
-- ng g s home/novo-usuario/novo-usuario
-- ng g i home/novo-usuario/novo-usuario (i, interface)
-- ng g s home/novo-usuario/usuario-existe
-- npm i jwt-decode
-- ng g s autenticacao/token
-- ng g s autenticacao/usuario/usuario
-- ng g i autenticacao/usuario/usuario
-- ng g m componentes/cabecalho
-- ng g c componentes/cabecalho
-- ng g m componentes/rodape
-- ng g c componentes/rodape
-- ng g c animais/animal
-- ng g m componentes/cartao
-- ng g c componentes/cartao
-- ng g s animais/animais
-- ng g i animais/animais
-- ng g c animais/grade-fotos-animais
-- ng g guard autenticacao/autenticacao (após, marcar o CanLoad)
-- ng g guard autenticacao/login
-- ng g c animais/detalhe-animal
-- ng g interceptor autenticacao/autenticacao
-- ng g c animais/detalhe-animal/comentarios
-- ng g s animais/detalhe-animal/comentarios/comentarios
-- ng g i animais/detalhe-animal/comentarios/comentarios
-- ng g resolver animais/lista-animais/lista-animais
-- ng g m shared
-- ng g m componentes/menu
-- ng g c componentes/menu
-- ng g c animais/novo-animal
-- npm install -g http-server (aqui foi instalado um servidor web, que não é o mesmo do angular cli, podendo ser qualquer um)
-- ng build (irá gerar o bundle, o pacote do projeto)
-- ng build --prod (irá gerar dois pacotes, em modo de produção e mais otimizados, ele gerará um para navegadores mais antigos e outro para navegadores mais novos)
-- http-server (baseado na instalação do npm http-server, basta dar esse comando na pasta do bundle dist/gatitobook)
+- `ng new gatitobook --strict` (iniciar novo projeto com várias verificações já)
+- `npm install --save-dev prettier`
+- `npm install --save-dev tslint-config-prettier`
+- `npm install --save-dev tslint-plugin-prettier`
+- `npm install bootstrap font-awesome`
+- `ng generate module home --routing -d` (--routing, já adiciona os arquivos de rotas; -d, teste executar o comando e dá um retorno, mas não cria os arquivos É SÓ PRA TESTAR)
+- `ng generate module home --routing`
+- `ng g c home` (g, generate; c, component)
+- `ng serve --o` (--o, abrir o navegador após a compilação)
+- `ng g c home/login` (criar o component login dentro do modulo home)
+- `ng g m autenticacao`
+- `ng g s autenticacao/autenticacao` (s, service)
+- `ng g m animais --routing`
+- `ng g c animais/lista-animais`
+- `ng g m componentes/mensagem`
+- `ng g c componentes/mensagem`
+- `ng g c home/novo-usuario`
+- `ng g s home/novo-usuario/novo-usuario`
+- `ng g i home/novo-usuario/novo-usuario` (i, interface)
+- `ng g s home/novo-usuario/usuario-existe`
+- `npm i jwt-decode`
+- `ng g s autenticacao/token`
+- `ng g s autenticacao/usuario/usuario`
+- `ng g i autenticacao/usuario/usuario`
+- `ng g m componentes/cabecalho`
+- `ng g c componentes/cabecalho`
+- `ng g m componentes/rodape`
+- `ng g c componentes/rodape`
+- `ng g c animais/animal`
+- `ng g m componentes/cartao`
+- `ng g c componentes/cartao`
+- `ng g s animais/animais`
+- `ng g i animais/animais`
+- `ng g c animais/grade-fotos-animais`
+- `ng g guard autenticacao/autenticacao` (após, marcar o CanLoad)
+- `ng g guard autenticacao/login`
+- `ng g c animais/detalhe-animal`
+- `ng g interceptor autenticacao/autenticacao`
+- `ng g c animais/detalhe-animal/comentarios`
+- `ng g s animais/detalhe-animal/comentarios/comentarios`
+- `ng g i animais/detalhe-animal/comentarios/comentarios`
+- `ng g resolver animais/lista-animais/lista-animais`
+- `ng g m shared`
+- `ng g m componentes/menu`
+- `ng g c componentes/menu`
+- `ng g c animais/novo-animal`
+- `npm install -g http-server` (aqui foi instalado um servidor web, que não é o mesmo do angular cli, podendo ser qualquer um)
+- `ng build` (irá gerar o bundle, o pacote do projeto)
+- `ng build --prod` (irá gerar dois pacotes, em modo de produção e mais otimizados, ele gerará um para navegadores mais antigos e outro para navegadores mais novos)
+- `http-server` (baseado na instalação do npm http-server, basta dar esse comando na pasta do bundle dist/gatitobook)
 
 ## Anotações
 
