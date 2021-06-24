@@ -1,4 +1,4 @@
-# Gatitobook
+# GatitobookFormacaoAngularAlura
 
 ## Neste projeto:
 - Primeiro Curso:
